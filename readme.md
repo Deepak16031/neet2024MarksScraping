@@ -1,5 +1,19 @@
 NEET 2024 Marks Scrapping
 
+To instantly connect with database-
+unzip- data.zip 
+
+# Start a postgress server using docker - you need to stay outside of the extracted zip.
+
+docker run --name neetScam -e POSTGRES_PASSWORD=deepak -e POSTGRES_USER=deepak -e POSTGRES_DB=neetScam -d -p 5438:5432 -v "$PWD/data:/var/lib/postgresql/data" postgres:latest
+
+connect to the database-
+docker exec -it neetScam psql -d neetScam -U deepak
+
+query
+select count(*) from neetscame
+expected output - 
+-> count | 2325888
 
 1. Download pdfs- python3 downloadPdf.py
 2. Convert to csv - python3 pdfToCsv.py
